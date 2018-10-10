@@ -1,4 +1,4 @@
-Install and deploy
+Install
 ===
 ```bash
 npm install

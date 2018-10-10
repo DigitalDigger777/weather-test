@@ -142,9 +142,10 @@ class Weather extends React.Component {
             }
             throw new TypeError("Oops, we haven't got JSON!")
         }).then(data => {
-
+            console.log(data);
             this.setState({
                 t: (data.main.temp - 273.15).toFixed(2),
+                w: data.weather[0].description,
                 localityLongName: localityLongName,
                 city: city
             });
@@ -164,6 +165,7 @@ class Weather extends React.Component {
             <View style={styles.container}>
                 <Text>City: {city}</Text>
                 <Text>Temp: {this.state.t} C°</Text>
+                <Text>Description: {this.state.w}</Text>
             </View>
         );
     }
